@@ -40,5 +40,48 @@ from ..model_cache import get_preds  # noqa: F401
 
 
 def run(ds, cfg, preds=None):
-    # TODO
-    raise NotImplementedError("check second_opinion chưa làm")
+    if preds is None:
+        preds = get_preds(ds, cfg, "checker")
+    rules, issues = cfg["second_opinion"], []
+    for path in ds.image_files():
+        stem = path.stem
+        lines = ds.read_label_lines(stem)
+        size = ds.image_size(stem)
+        if stem not in preds or lines is None or not size:
+            continue
+        labels = ds.valid_boxes(stem)
+        predictions = preds[stem]
+        for c, confidence, x, y, w, h in predictions:
+            if confidence < rules["conf"] or w * size[0] * h * size[1] < rules["min_area_px"]:
+                continue
+            candidates = [(b[0], iou_xywh((x, y, w, h), b[1:])) for b in labels]
+            candidates = [(cls, overlap) for cls, overlap in candidates if overlap >= rules["iou_missing"]]
+            same = [overlap for cls, overlap in candidates if cls == c]
+            code, overlap = None, None
+            if not candidates:
+                code = "POSSIBLE_MISSING"
+            elif same:
+                overlap = max(same)
+                if overlap < rules["iou_loose"]:
+                    code = "POSSIBLE_LOOSE_BOX"
+            else:
+                overlap = max(v for _, v in candidates)
+                if overlap >= rules["iou_match"]:
+                    code = "POSSIBLE_WRONG_CLASS"
+            if code:
+                extra = {"conf": confidence}
+                if overlap is not None:
+                    extra["iou"] = overlap
+                issues.append(Issue("second_opinion", WARN, code, stem, "model đề nghị người kiểm tra nhãn", extra=extra))
+        for line, text in lines:
+            try:
+                box = parse_yolo_line(text)
+            except (ValueError, OverflowError):
+                continue
+            if not 0 <= box[0] < len(ds.classes):
+                continue
+            overlaps = [iou_xywh(box[1:], p[2:]) for p in predictions if p[1] >= rules["fp_conf"]]
+            best = max(overlaps, default=0.0)
+            if best < rules["iou_missing"]:
+                issues.append(Issue("second_opinion", WARN, "POSSIBLE_FALSE_POS", stem, "nhãn không khớp dự đoán; cần người kiểm tra", line, {"iou": best}))
+    return issues
