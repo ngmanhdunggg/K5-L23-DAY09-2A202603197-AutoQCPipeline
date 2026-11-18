@@ -60,11 +60,14 @@ Chênh mAP50 (clean − raw) là +0,018, cùng cỡ độ lệch chuẩn giữa 
 
 ## 6. Quyết định và ghi chú AI
 
-*(Thưởng +2, tùy chọn)* CVAT: lọc `width < 20`, ảnh/số box khớp, đối chiếu `BOX_TINY` (xem docs/CVAT_FILTER.md), 1 câu về `can_review`.
-
 a, Quyết định: Giữ Hold vì còn 38/205 ảnh cảnh báo chưa duyệt (18,54%). Để đạt Release, cần duyệt và xử lý thêm, chạy lại QC để không còn lỗi bắt buộc và tỷ lệ cảnh báo chưa duyệt dưới 10%.
-Ghi chú AI:
+b, Ghi chú AI:
 - Prompt chính: Hỗ trợ hoàn thiện 4 module theo hướng dẫn và test có sẵn của đề.
 - Cách kiểm: Tôi trực tiếp chạy 79 test đều pass, calibration, pipeline và train raw/clean trên GPU máy cá nhân. Tôi cũng kiểm tra khi không có người duyệt, xác nhận pipeline chặn xuất dữ liệu còn thiếu nhãn.
 - AI sai: Code ban đầu chưa xử lý ID lớp inf, gây OverflowError; AI phát hiện khi kiểm tra bổ sung và sửa cách bắt lỗi.
-CVAT: Chưa thực hiện phần thưởng tùy chọn.
+
+Trong CVAT, lọc `width < 20` trên `img_0020.jpg` được 3 box `person`. Pipeline không báo `BOX_TINY` trên ảnh này vì cả ba box đều có cạnh ngắn trên 12 px. Thuộc tính `can_review` dùng để đánh dấu box cần xem lại; pipeline chuyển các trường hợp nghi ngờ vào hàng đợi `05_review_queue.csv`.
+
+![CVAT: 3 box person khớp trên img_0020.jpg](evidence/cvat_img0020_boxes.png)
+
+![CVAT: điều kiện lọc Width < 20](evidence/cvat_width_filter.png)
