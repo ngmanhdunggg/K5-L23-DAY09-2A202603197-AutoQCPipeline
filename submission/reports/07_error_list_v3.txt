@@ -1,0 +1,89 @@
+# Danh sách lỗi — SAU người duyệt (v3)
+ảnh đã quét: 205
+
+label_format -> 10 dòng
+missing_labels -> 4 dòng
+second_opinion -> 57 dòng
+
+[WARN ] BOX_HUGE             img_0018.txt:1  box chiếm quá nhiều diện tích ảnh
+[WARN ] BOX_HUGE             img_0128.txt:1  box chiếm quá nhiều diện tích ảnh
+[WARN ] BOX_HUGE             img_0196.txt:1  box chiếm quá nhiều diện tích ảnh
+[WARN ] BOX_TINY             img_0026.txt:6  cạnh ngắn dưới ngưỡng pixel
+[WARN ] BOX_TINY             img_0051.txt:5  cạnh ngắn dưới ngưỡng pixel
+[WARN ] BOX_TINY             img_0069.txt:2  cạnh ngắn dưới ngưỡng pixel
+[WARN ] BOX_TINY             img_0161.txt:2  cạnh ngắn dưới ngưỡng pixel
+[WARN ] BOX_TINY             img_0161.txt:3  cạnh ngắn dưới ngưỡng pixel
+[WARN ] BOX_TINY             img_0161.txt:4  cạnh ngắn dưới ngưỡng pixel
+[WARN ] BOX_TINY             img_0183.txt:11  cạnh ngắn dưới ngưỡng pixel
+[WARN ] EMPTY_LABEL          img_0013  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0097  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0129  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0192  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] POSSIBLE_FALSE_POS   img_0014.txt:2  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0022.txt:2  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0035.txt:2  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0068.txt:8  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0069.txt:2  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0075.txt:6  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0091.txt:7  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0093.txt:3  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0095.txt:6  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0111.txt:2  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0124.txt:8  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0131.txt:11  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0134.txt:5  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0149.txt:3  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0150.txt:3  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0177.txt:2  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0180.txt:5  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0189.txt:4  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0191.txt:1  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0206.txt:1  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_FALSE_POS   img_0212.txt:4  nhãn không khớp dự đoán; cần người kiểm tra
+[WARN ] POSSIBLE_LOOSE_BOX   img_0015  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0018  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0021  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0036  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0038  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0045  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0046  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0054  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0058  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0064  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0077  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0082  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0090  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0099  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0119  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0125  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0142  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0175  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0200  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_LOOSE_BOX   img_0212  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_MISSING     img_0032  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_MISSING     img_0062  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_MISSING     img_0121  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_MISSING     img_0126  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_MISSING     img_0127  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_MISSING     img_0127  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_MISSING     img_0135  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_MISSING     img_0159  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_MISSING     img_0160  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_MISSING     img_0183  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_MISSING     img_0199  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_MISSING     img_0210  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_MISSING     img_0220  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_WRONG_CLASS img_0078  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_WRONG_CLASS img_0083  model đề nghị người kiểm tra nhãn
+[WARN ] POSSIBLE_WRONG_CLASS img_0220  model đề nghị người kiểm tra nhãn
+
+## Tổng hợp theo mã
+warn  BOX_HUGE               3
+warn  BOX_TINY               7
+warn  EMPTY_LABEL            4
+warn  POSSIBLE_FALSE_POS     21
+warn  POSSIBLE_LOOSE_BOX     20
+warn  POSSIBLE_MISSING       13
+warn  POSSIBLE_WRONG_CLASS   3
+
+Kết luận: HOLD — Còn 38/205 ảnh cảnh báo chưa duyệt (18.54%), đạt ngưỡng 10.00%.

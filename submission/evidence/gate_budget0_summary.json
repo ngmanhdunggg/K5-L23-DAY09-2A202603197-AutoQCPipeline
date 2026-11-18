@@ -1,0 +1,18 @@
+{
+  "verdict": {
+    "decision": "Rework",
+    "n_errors": 6,
+    "n_warn_images": 112,
+    "n_images": 205,
+    "warn_ratio": 0.5463,
+    "reasons": [
+      "Còn 6 lỗi bắt buộc; phải sửa trước khi xuất."
+    ]
+  },
+  "reviewed": 0,
+  "budget": 0,
+  "seconds": 5.6,
+  "exported": null,
+  "config_sha1": "de421209560fc2a606e7d588063966623b40babb",
+  "review_sim_sha1": "7988ca22827f780a7043a2300490e679a1697154"
+}

@@ -1,0 +1,366 @@
+{
+  "4": [
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0039",
+      "message": "trùng từng byte với img_0012",
+      "line": "",
+      "extra": "{\"of\": \"img_0012\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0049",
+      "message": "trùng ảnh kho test/val: test/test_033.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_033.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_NEAR",
+      "image": "img_0076",
+      "message": "trùng gần đúng với img_0042 (phash 0)",
+      "line": "",
+      "extra": "{\"of\": \"img_0042\", \"dist\": 0}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0080",
+      "message": "trùng từng byte với img_0071",
+      "line": "",
+      "extra": "{\"of\": \"img_0071\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0102",
+      "message": "trùng từng byte với img_0082",
+      "line": "",
+      "extra": "{\"of\": \"img_0082\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_NEAR",
+      "image": "img_0143",
+      "message": "trùng gần đúng với img_0037 (phash 0)",
+      "line": "",
+      "extra": "{\"of\": \"img_0037\", \"dist\": 0}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0156",
+      "message": "trùng từng byte với img_0147",
+      "line": "",
+      "extra": "{\"of\": \"img_0147\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0162",
+      "message": "trùng từng byte với img_0054",
+      "line": "",
+      "extra": "{\"of\": \"img_0054\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0167",
+      "message": "trùng ảnh kho test/val: test/test_044.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_044.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0174",
+      "message": "trùng ảnh kho test/val: test/test_085.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_085.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0203",
+      "message": "trùng từng byte với img_0145",
+      "line": "",
+      "extra": "{\"of\": \"img_0145\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0207",
+      "message": "trùng từng byte với img_0182",
+      "line": "",
+      "extra": "{\"of\": \"img_0182\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0221",
+      "message": "trùng ảnh kho test/val: test/test_009.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_009.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0222",
+      "message": "trùng từng byte với img_0151",
+      "line": "",
+      "extra": "{\"of\": \"img_0151\"}"
+    }
+  ],
+  "16": [
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_NEAR",
+      "image": "img_0011",
+      "message": "trùng gần đúng với img_0008 (phash 16)",
+      "line": "",
+      "extra": "{\"of\": \"img_0008\", \"dist\": 16}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0013",
+      "message": "trùng ảnh kho test/val: test/test_087.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_087.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0017",
+      "message": "trùng ảnh kho test/val: test/test_071.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_071.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0021",
+      "message": "trùng ảnh kho test/val: test/test_048.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_048.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0033",
+      "message": "trùng ảnh kho test/val: test/test_070.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_070.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0038",
+      "message": "trùng ảnh kho test/val: test/test_002.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_002.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0039",
+      "message": "trùng từng byte với img_0012",
+      "line": "",
+      "extra": "{\"of\": \"img_0012\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0049",
+      "message": "trùng ảnh kho test/val: test/test_033.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_033.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_NEAR",
+      "image": "img_0076",
+      "message": "trùng gần đúng với img_0042 (phash 0)",
+      "line": "",
+      "extra": "{\"of\": \"img_0042\", \"dist\": 0}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0080",
+      "message": "trùng từng byte với img_0071",
+      "line": "",
+      "extra": "{\"of\": \"img_0071\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_NEAR",
+      "image": "img_0084",
+      "message": "trùng gần đúng với img_0074 (phash 16)",
+      "line": "",
+      "extra": "{\"of\": \"img_0074\", \"dist\": 16}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0101",
+      "message": "trùng ảnh kho test/val: test/test_039.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_039.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0102",
+      "message": "trùng từng byte với img_0082",
+      "line": "",
+      "extra": "{\"of\": \"img_0082\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0115",
+      "message": "trùng ảnh kho test/val: test/test_088.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_088.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_NEAR",
+      "image": "img_0143",
+      "message": "trùng gần đúng với img_0037 (phash 0)",
+      "line": "",
+      "extra": "{\"of\": \"img_0037\", \"dist\": 0}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0156",
+      "message": "trùng từng byte với img_0147",
+      "line": "",
+      "extra": "{\"of\": \"img_0147\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0162",
+      "message": "trùng từng byte với img_0054",
+      "line": "",
+      "extra": "{\"of\": \"img_0054\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0167",
+      "message": "trùng ảnh kho test/val: test/test_044.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_044.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0174",
+      "message": "trùng ảnh kho test/val: test/test_085.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_085.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_NEAR",
+      "image": "img_0177",
+      "message": "trùng gần đúng với img_0113 (phash 16)",
+      "line": "",
+      "extra": "{\"of\": \"img_0113\", \"dist\": 16}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_NEAR",
+      "image": "img_0186",
+      "message": "trùng gần đúng với img_0061 (phash 10)",
+      "line": "",
+      "extra": "{\"of\": \"img_0061\", \"dist\": 10}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0203",
+      "message": "trùng từng byte với img_0145",
+      "line": "",
+      "extra": "{\"of\": \"img_0145\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0207",
+      "message": "trùng từng byte với img_0182",
+      "line": "",
+      "extra": "{\"of\": \"img_0182\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "LEAK_TEST",
+      "image": "img_0221",
+      "message": "trùng ảnh kho test/val: test/test_009.jpg",
+      "line": "",
+      "extra": "{\"of\": \"test/test_009.jpg\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_EXACT",
+      "image": "img_0222",
+      "message": "trùng từng byte với img_0151",
+      "line": "",
+      "extra": "{\"of\": \"img_0151\"}"
+    },
+    {
+      "check": "duplicates",
+      "severity": "error",
+      "code": "DUP_IMAGE_NEAR",
+      "image": "img_0223",
+      "message": "trùng gần đúng với img_0077 (phash 6)",
+      "line": "",
+      "extra": "{\"of\": \"img_0077\", \"dist\": 6}"
+    }
+  ]
+}

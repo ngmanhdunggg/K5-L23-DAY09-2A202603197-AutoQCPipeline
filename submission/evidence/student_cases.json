@@ -1,0 +1,5 @@
+{
+  "two_errors_and_blank_line": "pass",
+  "nonfinite_class_and_multiple_predictions": "pass",
+  "clip_then_repeat_is_idempotent": "pass"
+}

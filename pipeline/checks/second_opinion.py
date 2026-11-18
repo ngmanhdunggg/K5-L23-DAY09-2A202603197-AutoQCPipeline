@@ -49,7 +49,15 @@ def run(ds, cfg, preds=None):
         size = ds.image_size(stem)
         if stem not in preds or lines is None or not size:
             continue
-        labels = ds.valid_boxes(stem)
+        numbered_labels = []
+        for line, text in lines:
+            try:
+                box = parse_yolo_line(text)
+            except (ValueError, OverflowError):
+                continue
+            if 0 <= box[0] < len(ds.classes):
+                numbered_labels.append((line, box))
+        labels = [box for _, box in numbered_labels]
         predictions = preds[stem]
         for c, confidence, x, y, w, h in predictions:
             if confidence < rules["conf"] or w * size[0] * h * size[1] < rules["min_area_px"]:
@@ -73,13 +81,7 @@ def run(ds, cfg, preds=None):
                 if overlap is not None:
                     extra["iou"] = overlap
                 issues.append(Issue("second_opinion", WARN, code, stem, "model đề nghị người kiểm tra nhãn", extra=extra))
-        for line, text in lines:
-            try:
-                box = parse_yolo_line(text)
-            except (ValueError, OverflowError):
-                continue
-            if not 0 <= box[0] < len(ds.classes):
-                continue
+        for line, box in numbered_labels:
             overlaps = [iou_xywh(box[1:], p[2:]) for p in predictions if p[1] >= rules["fp_conf"]]
             best = max(overlaps, default=0.0)
             if best < rules["iou_missing"]:
