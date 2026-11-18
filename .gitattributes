@@ -4,3 +4,5 @@
 *.png binary
 *.JPG binary
 *.pt binary
+# Training records the exact bytes of this generated manifest.
+submission/export/clean_v1/manifest.json -text -eol
