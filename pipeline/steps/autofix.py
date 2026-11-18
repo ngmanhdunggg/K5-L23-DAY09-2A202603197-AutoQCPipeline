@@ -35,5 +35,69 @@ from ..common import ERROR, parse_yolo_line  # noqa: F401
 
 
 def fix(ds, issues, cfg):
-    # TODO
-    raise NotImplementedError("autofix chưa làm")
+    changes = []
+    errors = [i for i in issues if i.severity == ERROR]
+    def record(image, line, action, before, after):
+        changes.append(dict(image=image, line=line, action=action, before=before, after=after))
+
+    # Image removal wins over all line edits on the same image.
+    removed = set()
+    for issue in errors:
+        if issue.code.startswith("DUP_IMAGE_") or issue.code in {"LEAK_TEST", "CORRUPT_IMAGE", "BAD_SIZE"}:
+            path = ds.image_path(issue.image)
+            if path and issue.image not in removed:
+                record(issue.image, None, "remove_image", path.name, "")
+                path.unlink()
+                ds.label_path(issue.image).unlink(missing_ok=True)
+                removed.add(issue.image)
+    if any(i.code == "BAD_CLASS_NAME" for i in errors):
+        data = yaml.safe_load(ds.yaml_path.read_text(encoding="utf-8")) if ds.yaml_path.exists() else {}
+        data = data or {}
+        if ds.yaml_names() != dict(enumerate(cfg["classes"])):
+            before = data.get("names", {})
+            data["names"] = list(cfg["classes"])
+            ds.yaml_path.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")
+            record("data.yaml", None, "rename_classes", str(before), str(data["names"]))
+    grouped = defaultdict(lambda: defaultdict(set))
+    missing = set()
+    for issue in errors:
+        if issue.image in removed:
+            continue
+        if issue.code == "MISSING_LABEL_FILE" and issue.image not in missing and not ds.label_path(issue.image).exists():
+            record(issue.image, None, "needs_label", "(không có file)", "chuyển người gán")
+            missing.add(issue.image)
+        if issue.line is not None:
+            grouped[issue.image][issue.line].add(issue.code)
+    drops = {"BAD_FORMAT", "BAD_CLASS_ID", "BOX_ZERO", "DUP_BOX"}
+    for stem in sorted(grouped):
+        path = ds.label_path(stem)
+        if not path.exists():
+            continue
+        original = path.read_text(encoding="utf-8").splitlines()
+        output, changed = [], False
+        for line, text in enumerate(original, 1):
+            codes = grouped[stem].get(line, set())
+            action, after = None, text
+            if codes & drops:
+                action, after = "drop_line", ""
+            elif "BOX_OUT_OF_IMAGE" in codes:
+                try:
+                    c, x, y, w, h = parse_yolo_line(text)
+                except (ValueError, OverflowError):
+                    action, after = "drop_line", ""
+                else:
+                    left, top = max(0.0, x - w / 2), max(0.0, y - h / 2)
+                    right, bottom = min(1.0, x + w / 2), min(1.0, y + h / 2)
+                    if right <= left or bottom <= top:
+                        action, after = "drop_line", ""
+                    elif (left, top, right, bottom) != (x - w / 2, y - h / 2, x + w / 2, y + h / 2):
+                        action = "clip_box"
+                        after = f"{c} {(left + right) / 2:.10f} {(top + bottom) / 2:.10f} {right - left:.10f} {bottom - top:.10f}"
+            if action:
+                changed = True
+                record(stem, line, action, text, after)
+            if action != "drop_line":
+                output.append(after)
+        if changed:
+            path.write_text("\n".join(output) + ("\n" if output else ""), encoding="utf-8")
+    return changes
